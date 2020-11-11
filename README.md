@@ -33,7 +33,7 @@ Pre-compiled firmware can be found in the [Compiled Firmware](https://git.pickys
 
 # Extra info
 
-Post firmware flash I recommend running the following GCode:
+Post firmware flash I recommend running the following GCode (change the M851 line to match your Z offset):
 
 ```
 M502; Factory reset your printer
