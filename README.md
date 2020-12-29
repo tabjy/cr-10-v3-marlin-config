@@ -13,7 +13,7 @@ The firmware has X and Y offsets pre-configured in it for the BLTouch based on t
 I did not configure the Z offset in firmware since that might be unique per printer.
 
 
-# Changes/tweaks I've made:
+# Changes/tweaks from stock CR-10 V2 config:
 
 * Enabled `POWER_LOSS_RECOVERY`
 * Set `CUSTOM_MACHINE_NAME` to match the CR-10 V3 (instead of V2)
