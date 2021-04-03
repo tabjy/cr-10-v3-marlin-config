@@ -12,6 +12,8 @@ The firmware has X and Y offsets pre-configured in it for the BLTouch based on t
 
 I did not configure the Z offset in firmware since that might be unique per printer.
 
+I guess some of you use long USB cables that have problems at 250000 baud. I am now also compiling a slower version of the firmware that will run at 115200 for those who need it. I will sort out the firmware naming convention whenever Marlin 2.7.0.3 comes out. For now if the firmware filename does not include "115200b" assume it is the 250000b version. Either way the firmware will work, it just may be slower than you are expecting if you flash the 115200b version instead of the 250000b version.
+
 
 # Changes/tweaks from stock CR-10 V2 config:
 
@@ -24,7 +26,13 @@ I did not configure the Z offset in firmware since that might be unique per prin
 * Set `NOZZLE_TO_PROBE_OFFSET` to match where my BLTouch is (you might need to change this)
 * Set `INVERT_E*_DIR` to `TRUE` because the Titan drive is backwards I guess?
 * Disabled `RESTORE_LEVELING_AFTER_G28` because I use Gcode to handle all this manually and to make sure my bed leveling offsets aren't loaded when I run a mesh-level
-* Two builds of the firmware, one with BLTouch enabled and one with it disabled for those who haven't installed a BLTouch yet
+* Multiple builds of the firmware, one with BLTouch enabled and one with it disabled for those who haven't installed a BLTouch yet
+  * BLTouch Enabled, 250000 baud
+  * BLTouch Disabled, 250000 baud
+  * BLTouch Enabled, 115200 baud
+  * BLTouch Disabled, 115200 baud
+
+
 
 
 # Downloads
