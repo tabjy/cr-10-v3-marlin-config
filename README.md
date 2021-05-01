@@ -47,9 +47,3 @@ M851 Z-2.380; Set Z Probe Offset
 M500; Save settings
 M501; Load settings
 ```
-
-Enjoy!
-
-![Status Screen](/images/status-screen.jpeg)
-
-![Version Screen](/images/version-screen.jpeg)
