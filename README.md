@@ -14,6 +14,12 @@ The firmware has X and Y offsets pre-configured in it for the BLTouch based on t
 
 I did not configure the Z offset in firmware since that might be unique per printer.
 
+# Compiled firmware changes with Marlin 2.0.9.x
+
+The Marlin Firmware developers have gotten a lot more strict around the configuration files. Previously all I had to do was enable or disable BL Touch and things would take care of themselves. This is no longer the case and since I do not need non-BL enabled firmware I am going to stop compiling it instead of figuring out the  configuration changes I would now have to make.
+
+My advice. Get a BL Touch. They cost the same as 1-2 spools of filament and make printing a lot easier.
+
 
 # Changes/tweaks from stock CR-10 V3 config:
 
@@ -27,9 +33,7 @@ I did not configure the Z offset in firmware since that might be unique per prin
 * Enabled `SERIAL_PORT_2 1` [Issue 2](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/2)
 * Multiple builds of the firmware, one with BLTouch enabled and one with it disabled for those who haven't installed a BLTouch yet
   * BLTouch Enabled, 250000 baud
-  * BLTouch Disabled, 250000 baud
   * BLTouch Enabled, 115200 baud
-  * BLTouch Disabled, 115200 baud
 
 
 # Downloads
