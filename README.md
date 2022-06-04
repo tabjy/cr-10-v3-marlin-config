@@ -25,7 +25,7 @@ My advice. Get a BL Touch. They cost the same as 1-2 spools of filament and make
 I am no longer building a 115200 baud firmware for two reasons:
 
 - I never used it
-- I enabled `BAUD_RATE_GCODE` in the 2.0.9.4 Marlin I compiled so you can now change the baudrate via GCODE
+- I enabled `BAUD_RATE_GCODE` in the 2.0.9.4 Marlin (and later) so you can now change the baudrate via GCODE
   - `M575`: https://marlinfw.org/docs/gcode/M575.html
 
 # Changes/tweaks from stock CR-10 V3 config:
