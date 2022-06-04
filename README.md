@@ -20,6 +20,13 @@ The Marlin Firmware developers have gotten a lot more strict around the configur
 
 My advice. Get a BL Touch. They cost the same as 1-2 spools of filament and make printing a lot easier.
 
+# Where is the 115200 baud firmware?
+
+I am no longer building a 115200 baud firmware for two reasons:
+
+- I never used it
+- I enabled `BAUD_RATE_GCODE` in the 2.0.9.4 Marlin I compiled so you can now change the baudrate via GCODE
+  - `M575`: https://marlinfw.org/docs/gcode/M575.html
 
 # Changes/tweaks from stock CR-10 V3 config:
 
@@ -30,10 +37,9 @@ My advice. Get a BL Touch. They cost the same as 1-2 spools of filament and make
 * Set `NOZZLE_TO_PROBE_OFFSET` to match where my BLTouch is (you might need to change this)
 * Disabled `RESTORE_LEVELING_AFTER_G28` because I use Gcode to handle all this manually and to make sure my bed leveling offsets aren't loaded when I run a mesh-level
 * Disabled `AUTO_REPORT_SD_STATUS` because I'm tired of seeing it in my logs. I know the microSD card isn't installed. I can see. [Issue 6](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/6)
-* Enabled `SERIAL_PORT_2 1` [Issue 2](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/2)
-* Multiple builds of the firmware, one with BLTouch enabled and one with it disabled for those who haven't installed a BLTouch yet
-  * BLTouch Enabled, 250000 baud
-  * BLTouch Enabled, 115200 baud
+* Enabled `BAUD_RATE_GCODE` so you can now set the baud rate you want via `M575` and I now only have to compile one firmware
+* ~~Enabled `SERIAL_PORT_2 1`~~ [Issue 2](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/2)
+  * I had to disable this in 2.0.9.4 otherwise I'd get a conflict error on compile
 
 
 # Downloads
