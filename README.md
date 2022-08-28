@@ -20,6 +20,8 @@ The Marlin Firmware developers have gotten a lot more strict around the configur
 
 My advice. Get a BL Touch. They cost the same as 1-2 spools of filament and make printing a lot easier.
 
+2.0.9.4 is the last release of that firmware I will compile for as 2.1 appears to work fine.
+
 # Where is the 115200 baud firmware?
 
 I am no longer building a 115200 baud firmware for two reasons:
@@ -32,8 +34,9 @@ I am no longer building a 115200 baud firmware for two reasons:
 
 * Set `CUSTOM_MACHINE_NAME` because symantics
 * Custom logo/version strings
-* Set `HEATER_0_MAXTEMP` to `275` so the maximum temperature of the CR-10 V3 can be reached (260F)
-  * Marlin has a built-in saftey where it takes the max temperature, subtracts 15F and then that becomes the max temperature so 275 - 15 = 260
+* ~~Set `HEATER_0_MAXTEMP` to `275` so the maximum temperature of the CR-10 V3 can be reached (260F)~~
+  * ~~Marlin has a built-in saftey where it takes the max temperature, subtracts 15F and then that becomes the max temperature so 275 - 15 = 260~~
+  * This is now the default in the template configuration so I don't need to change it anymore
 * Set `NOZZLE_TO_PROBE_OFFSET` to match where my BLTouch is (you might need to change this)
 * Disabled `RESTORE_LEVELING_AFTER_G28` because I use Gcode to handle all this manually and to make sure my bed leveling offsets aren't loaded when I run a mesh-level
 * Disabled `AUTO_REPORT_SD_STATUS` because I'm tired of seeing it in my logs. I know the microSD card isn't installed. I can see. [Issue 6](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/6)
