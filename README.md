@@ -32,17 +32,19 @@ I am no longer building a 115200 baud firmware for two reasons:
 
 # Changes/tweaks from stock CR-10 V3 config:
 
-* Set `CUSTOM_MACHINE_NAME` because symantics
 * Custom logo/version strings
-* ~~Set `HEATER_0_MAXTEMP` to `275` so the maximum temperature of the CR-10 V3 can be reached (260F)~~
-  * ~~Marlin has a built-in saftey where it takes the max temperature, subtracts 15F and then that becomes the max temperature so 275 - 15 = 260~~
-  * This is now the default in the template configuration so I don't need to change it anymore
 * Set `NOZZLE_TO_PROBE_OFFSET` to match where my BLTouch is (you might need to change this)
 * Disabled `RESTORE_LEVELING_AFTER_G28` because I use Gcode to handle all this manually and to make sure my bed leveling offsets aren't loaded when I run a mesh-level
 * Disabled `AUTO_REPORT_SD_STATUS` because I'm tired of seeing it in my logs. I know the microSD card isn't installed. I can see. [Issue 6](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/6)
 * Enabled `BAUD_RATE_GCODE` so you can now set the baud rate you want via `M575` and I now only have to compile one firmware
-* ~~Enabled `SERIAL_PORT_2 1`~~ [Issue 2](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/2)
-  * I had to disable this in 2.0.9.4 otherwise I'd get a conflict error on compile
+* Enable `LIN_ADVANCE`
+  - This feature is enabled with ADVANCE_K set to 0 by default
+  - You can set your K-Factor with a M900 at the start of your print job
+  - More details about K-Factors can be found here: https://marlinfw.org/docs/features/lin_advance.html#saving-the-k-factor-in-the-firmware and in [Issue 12]
+* Enable `EXPERIMENTAL_SCURVE`
+  - This works inconjunction with LIN_ADVANCE
+  - More details here: https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
+* Set `DEFAULT_EJERK` to `10.0` which is recommended by Marlin when enabling `LIN_ADVANCE`
 
 
 # Downloads
