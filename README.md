@@ -40,7 +40,7 @@ I am no longer building a 115200 baud firmware for two reasons:
 * Enable `LIN_ADVANCE`
   - This feature is enabled with ADVANCE_K set to 0 by default
   - You can set your K-Factor with a M900 at the start of your print job
-  - More details about K-Factors can be found here: https://marlinfw.org/docs/features/lin_advance.html#saving-the-k-factor-in-the-firmware and in [Issue 12]
+  - More details about K-Factors can be found here: https://marlinfw.org/docs/features/lin_advance.html#saving-the-k-factor-in-the-firmware and in [Issue 12](https://git.pickysysadmin.ca/FiZi/cr-10-v3-marlin-config/-/issues/12)
 * Enable `EXPERIMENTAL_SCURVE`
   - This works inconjunction with LIN_ADVANCE
   - More details here: https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
